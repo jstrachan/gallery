@@ -32,8 +32,13 @@ spec:
           resources: {}
         - name: jx-variables
           resources: {}
-        - name: build
+        - image: mobiledevops/flutter-sdk-image:2.0.1
+          name: build
           resources: {}
+          script: |
+            #!/usr/bin/bash
+            flutter test
+            flutter build apk
         - name: promote-release
           resources: {}
         volumes:
